@@ -5,7 +5,14 @@ import '../../../config/asset_colors.dart';
 import '../../../providers/theme_provider.dart';
 
 class HeaderWidget extends ConsumerWidget implements PreferredSizeWidget {
-  const HeaderWidget({super.key});
+  final Function() scrollToHome;
+  final Function() scrollToAboutMe;
+
+  const HeaderWidget({
+    super.key,
+    required this.scrollToHome,
+    required this.scrollToAboutMe,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,7 +30,7 @@ class HeaderWidget extends ConsumerWidget implements PreferredSizeWidget {
       titleSpacing: 32,
       actions: [
         TextButton(
-          onPressed: () {},
+          onPressed: scrollToHome,
           style: TextButton.styleFrom(
             foregroundColor:
                 Theme.of(context).appBarTheme.foregroundColor ?? Colors.white,
@@ -31,7 +38,7 @@ class HeaderWidget extends ConsumerWidget implements PreferredSizeWidget {
           child: const Text('Home'),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: scrollToAboutMe,
           style: TextButton.styleFrom(
             foregroundColor:
                 Theme.of(context).appBarTheme.foregroundColor ?? Colors.white,
