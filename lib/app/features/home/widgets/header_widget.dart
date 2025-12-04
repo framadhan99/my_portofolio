@@ -13,7 +13,11 @@ class HeaderWidget extends ConsumerWidget implements PreferredSizeWidget {
     final isDarkMode = themeNotifier.isDarkMode;
     return AppBar(
       title: const Text('FAJAR RAMADHAN'),
-      titleTextStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+      titleTextStyle: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 24,
+        color: isDarkMode ? Colors.white : Colors.black,
+      ),
       centerTitle: false,
       actionsPadding: EdgeInsets.only(right: 32),
       titleSpacing: 32,
