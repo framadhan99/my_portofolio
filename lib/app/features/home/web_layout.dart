@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../config/asset_colors.dart';
 import '../../config/asset_paths.dart';
 import '../about/about_page.dart';
+import '../projects/project_page.dart';
 import 'widgets/header_widget.dart';
 
 final GlobalKey homeKey = GlobalKey();
@@ -49,6 +50,8 @@ class _WebLayoutState extends State<WebLayout> {
       appBar: HeaderWidget(
         scrollToHome: () => _scrollToSection(homeKey),
         scrollToAboutMe: () => _scrollToSection(aboutMeKey),
+        scrollToProjects: () => _scrollToSection(projectKey),
+        scrollToContact: () => _scrollToSection(contactKey),
       ),
       body: SingleChildScrollView(
         controller: _scrollController,
@@ -127,6 +130,8 @@ class _WebLayoutState extends State<WebLayout> {
             SizedBox(height: 150),
             // About Me
             AboutPage(key: aboutMeKey),
+            // Projects
+            ProjectPage(key: projectKey),
           ],
         ),
       ),

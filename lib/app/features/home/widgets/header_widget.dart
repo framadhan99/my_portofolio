@@ -7,11 +7,15 @@ import '../../../providers/theme_provider.dart';
 class HeaderWidget extends ConsumerWidget implements PreferredSizeWidget {
   final Function() scrollToHome;
   final Function() scrollToAboutMe;
+  final Function() scrollToProjects;
+  final Function() scrollToContact;
 
   const HeaderWidget({
     super.key,
     required this.scrollToHome,
     required this.scrollToAboutMe,
+    required this.scrollToProjects,
+    required this.scrollToContact,
   });
 
   @override
@@ -46,7 +50,7 @@ class HeaderWidget extends ConsumerWidget implements PreferredSizeWidget {
           child: const Text('About Me'),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: scrollToProjects,
           style: TextButton.styleFrom(
             foregroundColor:
                 Theme.of(context).appBarTheme.foregroundColor ?? Colors.white,
@@ -54,7 +58,7 @@ class HeaderWidget extends ConsumerWidget implements PreferredSizeWidget {
           child: const Text('Projects'),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: scrollToContact,
           style: TextButton.styleFrom(
             foregroundColor:
                 Theme.of(context).appBarTheme.foregroundColor ?? Colors.white,
